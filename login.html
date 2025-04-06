@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – RefundRadar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  <div class="auth-container">
+    <h2>Login to RefundRadar</h2>
+    <input type="email" id="login-email" placeholder="Email" required />
+    <input type="password" id="login-password" placeholder="Password" required />
+    <button onclick="login()">Login</button>
+    <a href="reset.html">Forgot Password?</a>
+    <a href="signup.html">Don't have an account? Sign Up</a>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase Config -->
+<script>
+ const firebaseConfig = {
+  apiKey: "AIzaSyAYArk0OdErgsUb5kmHbN_9lrD07i8vhmA",
+  authDomain: "refundradar-de2df.firebaseapp.com",
+  projectId: "refundradar-de2df",
+  storageBucket: "refundradar-de2df.firebasestorage.app",
+  messagingSenderId: "552764302278",
+  appId: "1:552764302278:web:a8bf3f6c9c4554bb0488c7",
+  measurementId: "G-1Y60BKQC5P"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+</body>
+</html>

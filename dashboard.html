@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – RefundRadar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+    <div class="dashboard-container">
+        <h2>Your Refunds</h2>
+        <div class="refund-form">
+            <input type="text" id="orderId" placeholder="Order ID">
+            <input type="text" id="amount" placeholder="Amount">
+            <input type="text" id="status" placeholder="Status">
+            <button onclick="addRefund()">Add Refund</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div class="refund-list" id="refund-list">
+            <!-- Refund items will be loaded here -->
+        </div>
+        <button onclick="exportRefundsToPDF()" class="export-btn">📝 Export Refunds to PDF</button>
+
+    </div>
+    <button onclick="connectGmail()">📩 Connect Gmail</button>
+
+<script>
+  function connectGmail() {
+    window.open('http://localhost:3000/auth', '_blank');
+  }
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="script.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <!-- Your Firebase Config -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYArk0OdErgsUb5kmHbN_9lrD07i8vhmA",
+            authDomain: "refundradar-de2df.firebaseapp.com",
+            projectId: "refundradar-de2df",
+            storageBucket: "refundradar-de2df.firebasestorage.app",
+            messagingSenderId: "552764302278",
+            appId: "1:552764302278:web:a8bf3f6c9c4554bb0488c7",
+            measurementId: "G-1Y60BKQC5P"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+</body>
+
+</html>

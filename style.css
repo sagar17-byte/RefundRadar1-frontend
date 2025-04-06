@@ -1,0 +1,359 @@
+/* ===== Reset & Global ===== */
+/* Default (Light Mode) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #0a84ff;
+  --footer-bg: #f0f0f0;
+  --footer-text: #333333;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #0a84ff;
+  --footer-bg: #1a1a1a;
+  --footer-text: #dddddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* ===== Dark Mode Button ===== */
+.toggle-mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ===== Landing Hero ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #4a90e2, #3578d1);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn.primary {
+  background-color: white;
+  color: #3578d1;
+  font-weight: bold;
+}
+
+.btn.primary:hover {
+  background-color: #eee;
+}
+
+.btn.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Typing Effect ===== */
+#typed-text {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 3rem;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+body.dark footer {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* ===== Auth Pages (login, signup, reset) ===== */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .auth-container {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3578d1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.auth-container button:hover {
+  background-color: #285ea8;
+}
+
+.auth-container a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #3578d1;
+  text-decoration: none;
+}
+
+/* ===== Dashboard ===== */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.dashboard-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.refund-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.refund-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.refund-form button {
+  padding: 10px 20px;
+  background-color: #3578d1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.refund-form button:hover {
+  background-color: #285ea8;
+}
+
+.refund-list {
+  margin-top: 20px;
+}
+
+.refund-item {
+  background-color: #f4f4f4;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid #3578d1;
+  border-radius: 6px;
+}
+
+body.dark .refund-item {
+  background-color: #1c1c1c;
+  border-left-color: #4a90e2;
+}
+
+.export-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--accent-color, #0a84ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.export-btn:hover {
+  background-color: #0077cc;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--bg-color, #fff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent-color, #0a84ff);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color, #333);
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-color, #0a84ff);
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Make sure it's higher than navbar's z-index */
+  padding: 10px;
+  border: none;
+  background: var(--accent-color, #0a84ff);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Dark Mode Toggle Button (in navbar) */
+.dark-mode-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-color, #333);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.2);
+  color: var(--accent-color, #0a84ff);
+}
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #0a84ff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Apply to navbar too */
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .nav-links li a {
+  color: var(--text-color);
+}

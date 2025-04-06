@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RefundRadar – Track Your Refunds</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">RefundRadar</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li>
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙</button>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <!-- 🎯 Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+      <p>Track all your refunds in one place, automatically.</p>
+      <div class="cta-buttons">
+        <a href="signup.html" class="btn primary">Get Started</a>
+        <a href="login.html" class="btn secondary">Login</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>🚀 Built with ❤️ by RefundRadar Team</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // Dark mode toggle
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Typing Effect
+    const text = "RefundRadar";
+    const typedText = document.getElementById("typed-text");
+    const cursor = document.querySelector(".cursor");
+
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      } else {
+        cursor.style.display = "none";
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(type, 500);
+    });
+  </script>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Your Firebase Config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAYArk0OdErgsUb5kmHbN_9lrD07i8vhmA",
+      authDomain: "refundradar-de2df.firebaseapp.com",
+      projectId: "refundradar-de2df",
+      storageBucket: "refundradar-de2df.firebasestorage.app",
+      messagingSenderId: "552764302278",
+      appId: "1:552764302278:web:a8bf3f6c9c4554bb0488c7",
+      measurementId: "G-1Y60BKQC5P"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+
+</body>
+
+</html>
